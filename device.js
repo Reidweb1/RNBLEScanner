@@ -9,15 +9,15 @@ export default class Device {
     if (!devices) {
       devices = [deviceObject.id]
     } else {
+      console.log('Devices? ', devices)
       for (const device of devices) {
-        console.log('0')
-        if (device.id === deviceObject.id) {
-          console.log('1')
+        console.log('Comparing Ids: ', device.id, ' with ', deviceObject.id)
+        if (device === deviceObject.id) {
+          console.log('GOT DUPE!')
           return
         }
-        console.log('2')
-        devices.push(deviceObject.id)
       }
+      devices.push(deviceObject.id)
     }
     return AsyncStorage.setItem(deviceStoreKey, JSON.stringify(devices))
   }

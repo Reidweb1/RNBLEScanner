@@ -4,7 +4,7 @@ import Device from '../device'
 export const REFRESH_DEVICES = 'REFRESH_DEVICES'
 
 export const refreshDevices = (device) => (dispatch) => {
-
+  console.log('Storing Device?')
   return Device.storeDevice(device)
     .then(() => {
       return Device.getDevices()

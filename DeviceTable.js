@@ -44,7 +44,6 @@ class DeviceTable extends React.Component {
   }
 
   cellForItem = (item) => {
-    console.log('Loading with Item? ', item)
     return (
       <DeviceCell device={ item.item } />
     )
